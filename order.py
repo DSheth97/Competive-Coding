@@ -1,0 +1,64 @@
+inp=int(input())
+s=input()
+ls=[j for j in s]
+v=ls.count('V')
+n=ls.count('N')
+g=ls.count('G')
+t=ls.count('T')
+s=ls.count('S')
+b=ls.count('B')
+p=ls.count('P')
+
+test=int(input())
+for i in range(test):
+    o=input()
+    s1=o[0]
+    s2=o[1]
+    s3=o[2]
+    if(s1=='V'):
+        c1=v
+    else:
+        c1=n
+    if(s2=='G'):
+        c2=g
+    else:
+        c2=t
+    if(s3=='S'):
+        c3=s
+    elif(s3=='B'):
+        c3=b
+    else:
+        c3=p
+    c=c1*c2*c3
+    c=c%1000000007
+    print(c)
+    if(c!=0):
+        if(s1=='V'):
+            v=v-1
+            if(v<0):
+                v=0
+        else:
+            n=n-1
+            if(n<0):
+                n=0
+        if(s2=='G'):
+            g=g-1
+            if(g<0):
+                g=0
+        else:
+            t=t-1
+            if(t<0):
+                t=0
+        if(s3=='S'):
+            s=s-1
+            if(s<0):
+                s=0
+        elif(s3=='B'):
+            b=b-1
+            if(b<0):
+                b=0
+        else:
+            p=p-1
+            if(p<0):
+                p=0
+    
